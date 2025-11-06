@@ -1,0 +1,25 @@
+Aplicação - Geral utiliza, suporte, comercial etc...
+hana.dwu.com.br:65090
+anderson.denardin
+DWU@2025*
+
+Desenvolvimento - Somente Dev
+hana.dwu.com.br:65020
+anderson.denardin
+DWU@2025*
+
+17 - Pedido
+23 - Cotação
+
+SAP Client - adenardin - DWU@2025
+
+Significado completo de TreeType
+Código	Significado (Inglês)	Descrição / Uso Prático
+N	None / Normal	Item comum, sem estrutura (não é pai nem filho).
+I	Ingredient	Item filho (componente) de um BOM de produção (geralmente em OITT/OITM).
+P	Production	Item filho (subitem) de um documento comercial (Pedido, Oferta, etc.) originado de uma BOM. (parecido com o “I”, mas usado em documentos de venda/compra).
+S	Sales Tree (Cabeçalho de Kit)	Item principal de uma estrutura de venda (kit, pacote, conjunto). É o “pai” dos P ou I.
+
+Sempre quando precisar ajustar uma procedure, ou uma transaction, é preciso ajustar o arquivo SBO_SP_TRANSACTIONNOTIFICATION, coidar que tem outros parecidos.
+
+
