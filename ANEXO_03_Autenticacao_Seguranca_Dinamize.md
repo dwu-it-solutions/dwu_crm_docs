@@ -14,7 +14,7 @@
 ```
 ┌─────────────┐           ┌──────────────┐          ┌──────────────┐
 │  Frontend   │───JWT────→│ Backend CRM  │──Token──→│  Dinamize    │
-│             │ (ANEXO_07)│              │  Prop.   │    API       │
+│             │ (ANEXO_08)│              │  Prop.   │    API       │
 └─────────────┘           └──────────────┘ (ANEXO_03)└──────────────┘
 ```
 
@@ -22,10 +22,10 @@
 
 | Documento | Escopo | Método |
 |-----------|--------|--------|
-| **ANEXO_07** | Frontend ↔ Backend CRM | JWT DIY |
+| **ANEXO_08** | Frontend ↔ Backend CRM | JWT DIY |
 | **ANEXO_03** | Backend CRM ↔ Dinamize | Token Proprietário |
 
-**Ver ANEXO_07** para decisão técnica sobre autenticação de usuários do CRM.
+**Ver ANEXO_08** para decisão técnica sobre autenticação de usuários do CRM.
 
 ---
 

@@ -440,7 +440,7 @@ Essas decisões estão **BLOQUEADAS** até analisar o help.dinamize.com:
 
 ## 📚 Documentos Criados para Facilitar
 
-1. ✅ **ANEXO_06** - Template estruturado para preencher
+1. ✅ **ANEXO_07** - Template estruturado para preencher
 2. ✅ **GUIA_ANALISE_API_INTEGRACOES** - Checklist passo-a-passo
 3. ✅ Este documento - Mostra o valor da análise
 

@@ -1,7 +1,7 @@
 # 📚 Índice da Documentação - CRM DWU (Integração Dinamize)
 
-**Última atualização:** 2025-11-05  
-**Versão:** 1.0
+**Última atualização:** 2025-11-06  
+**Versão:** 1.3
 
 ---
 
@@ -123,6 +123,43 @@
 
 ---
 
+### ✅ ANEXO_05_Backend_Modulo_Leads.md
+**Status:** ✅ Completo  
+**Data:** 2025-11-06  
+**O que contém:**
+- Visão geral do módulo de leads
+- Entidades principais (crm_leads, crm_lead_sync, crm_sync_queue)
+- Fluxos de dados completos:
+  - Criar lead com sincronização Dinamize
+  - Buscar/listar leads
+  - Atualizar lead existente
+  - Sincronização automática Dinamize → CRM
+  - Converter lead em oportunidade
+  - Importação CSV
+  - Pipeline Kanban
+  - Gestão de empresas e contatos
+  - Tarefas e interações
+- Tratamento de erros e retry
+- Estrutura de dados detalhada
+
+**Quando usar:** Implementação do backend do módulo de leads
+
+---
+
+### ✅ ANEXO_06_Frontend_Modulo_Leads.md
+**Status:** ✅ Completo  
+**Data:** 2025-11-06  
+**O que contém:**
+- Rotas e telas do módulo de leads
+- Fluxos do usuário detalhados
+- Componentes principais
+- Critérios de aceite
+- Integração com backend (alinhado ao ANEXO_05)
+
+**Quando usar:** Implementação do frontend do módulo de leads
+
+---
+
 ### 📝 ANEXO_05_Help_Dinamize_Insights.md
 **Status:** 📝 Template criado (aguardando preenchimento)  
 **O que vai conter:**
@@ -143,36 +180,28 @@
 
 ---
 
-### 📝 ANEXO_06_Guia_Pratico_Integracao_API.md
-**Status:** 📝 Template criado (aguardando preenchimento)  
-**O que vai conter:**
-- Tutoriais e guias disponíveis
-- **Exemplos de código práticos:**
-  - Autenticação
-  - Criar/atualizar contato
-  - Buscar com filtros
-  - Tratamento de erros
-- Melhores práticas de:
-  - Autenticação
-  - Sincronização
-  - Rate limiting
-  - Tratamento de erros
-- Campos customizados detalhados (cmp4...cmpN)
-- Webhooks (configuração e uso)
-- Casos de uso comuns:
-  - Importação inicial
-  - Sincronização incremental
-  - Tratamento de conflitos
-- Troubleshooting com soluções
-- Performance e otimização
-- Segurança e compliance
+---
 
-**Quando usar:** Implementação prática (código!)  
-**Fonte:** https://help.dinamize.com/tag?s=API%2520Integra%25C3%25A7%25C3%25B5es
+### ✅ ANEXO_07_Guia_Pratico_Integracao_API.md
+**Status:** 📝 Em desenvolvimento  
+**Data:** 2025-11-05  
+**O que contém:**
+- **Guia prático** de integração com API Dinamize
+- **Tutoriais e exemplos** extraídos do help.dinamize.com
+- **Melhores práticas** de implementação
+- **Casos de uso comuns** e troubleshooting
+- **Campos customizados** (cmp4, cmp5, etc.)
+- **Webhooks** (se disponíveis)
+- **Performance e otimização**
+
+**Quando usar:**
+- Implementação prática de integração
+- Resolução de problemas de integração
+- Referência de exemplos de código
 
 ---
 
-### ✅ ANEXO_07_Decisao_Tecnica_Autenticacao_JWT.md
+### ✅ ANEXO_08_Decisao_Tecnica_Autenticacao_JWT.md
 **Status:** ✅ Completo  
 **Data:** 2025-11-05  
 **O que contém:**
@@ -210,7 +239,7 @@ Frontend ─JWT─> Backend CRM ─Token Prop─> Dinamize
 
 ---
 
-### ✅ ANEXO_08_Decisao_Tecnica_Git_Flow_GitHub.md
+### ✅ ANEXO_09_Decisao_Tecnica_Git_Flow_GitHub.md
 **Status:** ✅ Completo (Objetivo e Sucinto)
 **Data:** 2025-11-05  
 **O que contém:**
@@ -233,6 +262,65 @@ Frontend ─JWT─> Backend CRM ─Token Prop─> Dinamize
 - Setup inicial dos repositórios
 - Decisões de versionamento
 - Estratégia de deploy
+
+---
+
+### ✅ ANEXO_10_Integracao_IA_CRM.md
+**Status:** ✅ Especificação Inicial
+**Data:** 2025-11-06  
+**O que contém:**
+- **10 Funcionalidades de IA especificadas:**
+  1. Scoring e Análise de Leads (score 0-100, classificação hot/warm/cold)
+  2. Sugestões de Próximas Ações (follow-up, proposta, reunião)
+  3. Enriquecimento Automático de Dados (LinkedIn, Clearbit, validação)
+  4. Geração de Conteúdo Personalizado (emails, propostas, notas)
+  5. Análise Preditiva de Oportunidades (probabilidade de fechamento)
+  6. Chatbot Assistente (busca e comandos conversacionais)
+  7. Análise de Sentimento (em interações)
+  8. Segmentação Automática (agrupamento de leads)
+  9. Detecção de Padrões e Anomalias (insights automáticos)
+  10. Automação Inteligente de Follow-up
+- **Arquitetura técnica:** Integração com LLM, APIs externas, cache Redis
+- **Estrutura de dados:** Tabelas para scores, sugestões, enriquecimentos, previsões
+- **Endpoints REST:** Especificação completa de APIs
+- **Fluxos de dados:** Diagramas detalhados
+- **Roadmap:** 3 fases de implementação (MVP → Avançado)
+- **Segurança e privacidade:** LGPD, rate limiting, anonimização
+
+**Quando usar:**
+- Planejamento de funcionalidades de IA
+- Implementação de features inteligentes
+- Decisões de arquitetura de IA/ML
+- Integração com serviços externos (OpenAI, Clearbit, etc.)
+
+---
+
+### ✅ ANEXO_11_Decisao_Tecnica_Design_System.md
+**Status:** ✅ Decisão Aprovada
+**Data:** 2025-11-06  
+**O que contém:**
+- **Decisão:** Material UI (MUI) como design system principal
+- **Análise comparativa detalhada:**
+  - Integração com React (nativo vs wrapper)
+  - Componentes para CRM (DataGrid, DatePicker, etc.)
+  - Design System e consistência (Material Design)
+  - Produtividade com Cursor AI (autocomplete e sugestões)
+  - Customização e branding (sistema de temas)
+  - Performance (bundle size, otimizações)
+  - Curva de aprendizado
+  - Manutenibilidade e escalabilidade
+- **Tabela comparativa:** 8 critérios avaliados (MUI vence em 6)
+- **Justificativa técnica:** Por que MUI é ideal para CRM
+- **Plano de implementação:** 3 fases (Setup → Componentes → Telas)
+- **Recursos e documentação:** Links e guias
+- **Considerações e mitigações:** Desafios e soluções
+
+**Quando usar:**
+- Decisão de design system para frontend
+- Justificativa técnica para stakeholders
+- Setup inicial do projeto React
+- Referência para customização de temas
+- Onboarding de novos desenvolvedores
 
 ---
 
@@ -410,21 +498,21 @@ Frontend ─JWT─> Backend CRM ─Token Prop─> Dinamize
 1. Ler **COMPARACAO_DOCUMENTACAO_ATUAL_VS_API_INTEGRACOES.md** (entender o valor)
 2. Abrir **GUIA_ANALISE_API_INTEGRACOES.md** como checklist
 3. Navegar https://help.dinamize.com/tag?s=API%2520Integra%25C3%25A7%25C3%25B5es
-4. Preencher **ANEXO_06** durante navegação
+4. Preencher **ANEXO_07** durante navegação
 5. Navegar https://help.dinamize.com/ (geral)
 6. Preencher **ANEXO_05** com conceitos de negócio
 7. Atualizar outros anexos conforme necessário
 
 ### Para IMPLEMENTAÇÃO (depois):
 1. **ANEXO_01** → Especificação técnica da API
-2. **ANEXO_06** → Exemplos de código práticos
+2. **ANEXO_07** → Exemplos de código práticos
 3. **ANEXO_03** → Implementar autenticação
 4. **ANEXO_02** + **dwu_crm_mvp_import_pgadmin.sql** → Estrutura do banco
 5. **ANEXO_05** → Entender regras de negócio
 6. **.cursorrules** → Seguir padrões do projeto
 
 ### Para TROUBLESHOOTING:
-1. **ANEXO_06** → Seção de troubleshooting
+1. **ANEXO_07** → Seção de troubleshooting
 2. **ANEXO_01** → Códigos de erro
 3. **ANEXO_05** → Conceitos e comportamentos esperados
 
@@ -432,14 +520,19 @@ Frontend ─JWT─> Backend CRM ─Token Prop─> Dinamize
 
 ## 📊 Status Geral da Documentação
 
-### ✅ Pronto para uso (10 documentos)
+### ✅ Pronto para uso (14 documentos)
 - LEVANTAMENTO_TECNICO_DINAMIZE_API.md
 - ANEXO_01 (Levantamento Técnico API Dinamize)
 - ANEXO_02 (Estrutura de Dados v1.1) - Atualizado 2025-11-05
 - ANEXO_03 (Autenticação Dinamize v1.1) - Atualizado 2025-11-05
 - ANEXO_04 (Análise Tecnologia Backend)
-- ANEXO_07 (Decisão JWT DIY) ✨ NOVO 2025-11-05
-- ANEXO_08 (Git Flow + GitHub) ✨ NOVO 2025-11-05
+- ANEXO_05 (Backend Módulo Leads) ✨ NOVO 2025-11-06
+- ANEXO_06 (Frontend Módulo Leads) ✨ NOVO 2025-11-06
+- ANEXO_07 (Guia Prático Integração API) 📝 Em desenvolvimento
+- ANEXO_08 (Decisão JWT DIY) ✨ NOVO 2025-11-05
+- ANEXO_09 (Git Flow + GitHub) ✨ NOVO 2025-11-05
+- ANEXO_10 (Integração IA CRM) ✨ NOVO 2025-11-06
+- ANEXO_11 (Decisão Design System) ✨ NOVO 2025-11-06
 - MANUAL_GIT_FLOW.md ✨ NOVO 2025-11-05
 - GUIA_ANALISE_API_INTEGRACOES.md
 - COMPARACAO_DOCUMENTACAO_ATUAL_VS_API_INTEGRACOES.md
@@ -447,7 +540,7 @@ Frontend ─JWT─> Backend CRM ─Token Prop─> Dinamize
 - dwu_crm_mvp_import_pgadmin.sql
 
 ### 📝 Templates criados, aguardando preenchimento (1 documento)
-- ANEXO_06 (Guia Prático Integração API) - Preencher após análise help.dinamize.com
+- ANEXO_07 (Guia Prático Integração API) - Preencher após análise help.dinamize.com
 
 ### 🔄 Em andamento (1 documento)
 - 20251105_analise_help_dinamize.md (acompanhamento)
@@ -458,7 +551,7 @@ Frontend ─JWT─> Backend CRM ─Token Prop─> Dinamize
 
 ### Fase 1: Análise (ATUAL)
 - [ ] Analisar https://help.dinamize.com/tag?s=API%2520Integra%25C3%25A7%25C3%25B5es
-- [ ] Preencher ANEXO_06
+- [ ] Preencher ANEXO_07
 - [ ] Analisar https://help.dinamize.com/ (geral)
 - [ ] Preencher ANEXO_05
 - [ ] Atualizar ANEXO_01, 02, 03 se necessário
@@ -498,7 +591,7 @@ A: dwu_crm_mvp_import_pgadmin.sql (na raiz do projeto)
 A: ANEXO_01_Levantamento_Tecnico_Dinamize_API.md
 
 **Q: Onde vou encontrar exemplos de código?**  
-A: ANEXO_06 (após preencher com análise do help)
+A: ANEXO_07 (após preencher com análise do help)
 
 **Q: Preciso ler tudo antes de implementar?**  
 A: Não! Mas PRECISA preencher ANEXO_05 e ANEXO_06 antes de começar a codificar.
@@ -506,6 +599,22 @@ A: Não! Mas PRECISA preencher ANEXO_05 e ANEXO_06 antes de começar a codificar
 ---
 
 ## 📝 Histórico de Versões
+
+### v1.3 - 2025-11-06
+- ✅ Renumerados anexos: ANEXO_06→07 (Guia), ANEXO_07→08 (JWT), ANEXO_08→09 (Git Flow), ANEXO_09→10 (IA), ANEXO_10→11 (Design System)
+- ✅ Atualizado índice com numeração correta
+- ✅ Removido arquivo duplicado ANEXO_05_Backend_Modulo_Leads 1.md
+- ✅ Atualizadas referências internas nos arquivos renumerados
+
+### v1.2 - 2025-11-06
+- ✅ Adicionado ANEXO_11 (Decisão Técnica Design System - Material UI vs Bootstrap)
+- ✅ Atualizado índice com novo documento
+
+### v1.1 - 2025-11-06
+- ✅ Adicionado ANEXO_05 (Backend Módulo Leads)
+- ✅ Adicionado ANEXO_06 (Frontend Módulo Leads)
+- ✅ Adicionado ANEXO_10 (Integração IA CRM)
+- ✅ Atualizado índice com novos documentos
 
 ### v1.0 - 2025-11-05
 - ✅ Criação do índice
@@ -518,6 +627,6 @@ A: Não! Mas PRECISA preencher ANEXO_05 e ANEXO_06 antes de começar a codificar
 ---
 
 **Mantido por:** Equipe DWU CRM  
-**Última revisão:** 2025-11-05  
+**Última revisão:** 2025-11-06  
 **Próxima revisão:** Após análise completa do help.dinamize.com
 

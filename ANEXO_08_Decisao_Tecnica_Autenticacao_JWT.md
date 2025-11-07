@@ -1,4 +1,4 @@
-# ANEXO 07 - Decisão Técnica: JWT para Autenticação
+# ANEXO 08 - Decisão Técnica: JWT para Autenticação
 ## CRM DWU - Análise Comparativa e Justificativa
 
 **Data:** 2025-11-05  

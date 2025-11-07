@@ -4,7 +4,7 @@
 **Versão:** 1.0  
 **Data:** 2025-11-05  
 **Baseado em:** GitLab Flow (metodologia) + GitHub (plataforma) + Semantic Versioning  
-**Referência:** ANEXO_08_Decisao_Tecnica_Git_Flow_GitHub.md
+**Referência:** ANEXO_09_Decisao_Tecnica_Git_Flow_GitHub.md
 
 ---
 
@@ -700,7 +700,7 @@ Implementa autenticação JWT para usuários do CRM.
 [Adicionar prints]
 
 ## Referências
-- ANEXO_07 (Decisão JWT)
+- ANEXO_08 (Decisão JWT)
 - Issue #123
 ```
 
@@ -1129,7 +1129,7 @@ v[MAJOR].[MINOR].[PATCH][-PRERELEASE]
 # Bom
 git commit -m "feat: Adiciona autenticação JWT"
 git commit -m "fix: Corrige renovação token Dinamize"
-git commit -m "docs: Atualiza ANEXO_07 com decisão JWT"
+git commit -m "docs: Atualiza ANEXO_08 com decisão JWT"
 
 # Ruim
 git commit -m "update"

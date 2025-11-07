@@ -1,4 +1,4 @@
-# ANEXO 06 - Guia Prático de Integração com API Dinamize
+# ANEXO 07 - Guia Prático de Integração com API Dinamize
 ## CRM DWU - Insights e Melhores Práticas
 
 **Data:** 2025-11-05  
@@ -15,7 +15,7 @@ Este documento complementa o ANEXO_01 (Levantamento Técnico) com insights prát
 **Diferença dos outros anexos:**
 - ANEXO_01: Especificação técnica da API (endpoints, JSON, headers)
 - ANEXO_05: Conceitos de negócio e funcionalidades
-- **ANEXO_06: Guia prático de implementação e integração**
+- **ANEXO_07: Guia prático de implementação e integração**
 
 ---
 
