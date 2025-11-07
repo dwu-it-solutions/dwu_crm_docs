@@ -790,7 +790,7 @@ Express.js ─────→ Fastify ──────────→ NestJS
 **GitHub Stars (Novembro 2024):**
 
 ```
-Express.js:  ████████████████████  65,000 ⭐
+Express.js:  ███████████████████   65,000 ⭐
 NestJS:      ████████████████████  67,000 ⭐
 Fastify:     ████████            32,000 ⭐
 ```
