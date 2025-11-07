@@ -1,9 +1,9 @@
 # ANEXO 04 - Análise de Tecnologia para Backend
 ## CRM DWU - Node.js vs .NET Core: Análise e Recomendação
 
-**Data:** 2025-01-XX  
-**Versão:** 1.0  
-**Status:** ✅ Análise Completa
+**Data:** 2025-01-05  
+**Versão:** 1.1  
+**Status:** ✅ Análise Completa - Decisão Técnica Aplicada
 
 ---
 
@@ -152,9 +152,9 @@ Este documento apresenta a análise comparativa entre Node.js e .NET Core para o
 
 #### Operações com PostgreSQL (JSONB)
 - **Node.js:** ⭐⭐⭐⭐⭐
-  - Prisma com excelente suporte a JSONB
-  - TypeORM também suporta bem
-  - Queries JSONB eficientes
+  - Prisma com excelente suporte nativo a JSONB
+  - Queries JSONB eficientes e type-safe
+  - Suporte otimizado para campos JSONB (ex: `dwu_source_data`)
   
 - **.NET Core:** ⭐⭐⭐⭐⭐
   - EF Core com suporte nativo a JSONB
@@ -227,19 +227,31 @@ Considere .NET Core se:
 
 ## 5. Stack Recomendada
 
-### 5.1 Stack Completa Sugerida
+### 5.1 Stack Completa Definida
 
 ```
 Runtime:        Node.js 18+ (LTS)
-Framework:      Express.js ou NestJS
+Framework:      NestJS
 Linguagem:      TypeScript 5+
-ORM:            Prisma ou TypeORM
+ORM:            Prisma (decisão técnica)
 Banco:          PostgreSQL (já definido)
 Filas:          BullMQ ou Bull (Redis)
 HTTP Client:    Axios
-Validação:      Zod ou class-validator
+Validação:      class-validator
 Cache:          Redis (opcional inicialmente)
 ```
+
+**Decisão Técnica - ORM:**
+- **Escolhido:** Prisma
+- **Justificativa:**
+  - Type-safety superior com geração automática de tipos
+  - Migrations versionadas e gerenciadas automaticamente
+  - Suporte nativo e eficiente a JSONB (importante para campos como `dwu_source_data`)
+  - Developer Experience superior (Prisma Studio, autocomplete)
+  - Performance otimizada para PostgreSQL
+  - Schema centralizado e fácil manutenção
+- **Alternativa considerada:** TypeORM (descartado)
+- **Data da decisão:** 2025-11-07
 
 ### 5.2 Estrutura de Diretórios
 
@@ -278,13 +290,13 @@ backend/
 ### 5.3 Bibliotecas Principais
 
 **Essenciais:**
-- `express` ou `@nestjs/core` - Framework
-- `prisma` ou `typeorm` - ORM
+- `@nestjs/core` - Framework (NestJS)
+- `prisma` e `@prisma/client` - ORM (decisão técnica)
 - `axios` - HTTP Client
 - `bullmq` ou `bull` - Filas
 - `redis` - Para filas e cache
-- `zod` ou `class-validator` - Validação
-- `bcrypt` ou `crypto` - Criptografia
+- `class-validator` - Validação
+- `bcrypt` - Criptografia
 
 **Opcionais:**
 - `winston` ou `pino` - Logging
@@ -325,12 +337,12 @@ backend/
 
 ### 7.1 Fase 1: Setup Inicial (Semana 1)
 
-- [ ] Configurar projeto Node.js + TypeScript
-- [ ] Configurar Prisma com PostgreSQL
-- [ ] Configurar Express.js ou NestJS
+- [x] Configurar projeto Node.js + TypeScript
+- [x] Configurar Prisma com PostgreSQL (ORM escolhido)
+- [x] Configurar NestJS
 - [ ] Configurar BullMQ com Redis
-- [ ] Configurar estrutura de pastas
-- [ ] Configurar variáveis de ambiente
+- [x] Configurar estrutura de pastas
+- [x] Configurar variáveis de ambiente
 
 ### 7.2 Fase 2: Módulos Core (Semanas 2-3)
 
@@ -441,8 +453,14 @@ Se necessário, considerar:
 
 ---
 
-**Última atualização:** 2025-01-XX  
+**Última atualização:** 2025-11-07  
 **Responsável:** Equipe DWU CRM  
-**Versão:** 1.0
+**Versão:** 1.1
+
+**Mudanças na versão 1.1 (2025-11-07):**
+- Decisão técnica documentada: Prisma escolhido como ORM único
+- TypeORM removido do projeto
+- Stack final definida: NestJS + Prisma + PostgreSQL
+- Justificativa técnica adicionada na seção 5.1
 
 
