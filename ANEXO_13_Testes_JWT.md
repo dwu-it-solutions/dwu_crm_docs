@@ -44,6 +44,18 @@
    ```
    Deve responder `401 Unauthorized`.
 
+4. **Mensagens traduzidas (i18n)**
+   ```bash
+   TOKEN=<copiar accessToken>
+   curl -s "http://localhost:3001/api/leads/999?lang=pt" \
+     -H "Authorization: Bearer $TOKEN"
+
+   curl -s http://localhost:3001/api/leads/999 \
+     -H "Authorization: Bearer $TOKEN" \
+     -H "Accept-Language: en"
+   ```
+   O primeiro comando responde `Lead 999 não encontrado`; o segundo responde `Lead 999 not found` utilizando o cabeçalho `Accept-Language`.
+
 ## 4. Notas
 - Para testar expiração, ajuste `JWT_EXPIRES_IN` no `backend.docker.env` e reinicie o container.
 - Healthcheck (`GET /api`) continua público por meio do decorator `@Public()`.

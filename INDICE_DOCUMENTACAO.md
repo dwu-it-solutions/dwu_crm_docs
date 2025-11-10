@@ -10,7 +10,7 @@
 | Documento | Finalidade | Status |
 |-----------|-----------|--------|
 | [📄 Documento Principal](#documento-principal) | Visão geral e status | ✅ Completo |
-| [📋 Anexos Técnicos](#anexos-tecnicos) | Especificações detalhadas | ✅ 4/6 completos |
+| [📋 Anexos Técnicos](#anexos-tecnicos) | Especificações detalhadas | ✅ Atualizado |
 | [📝 Guias Práticos](#guias-praticos) | Como fazer análises | ✅ Completo |
 | [💡 Anotações](#anotacoes) | Decisões e insights | 🔄 Em andamento |
 | [🗄️ Banco de Dados](#banco-de-dados) | Scripts SQL | ✅ Completo |
@@ -143,6 +143,18 @@
 - Estrutura de dados detalhada
 
 **Quando usar:** Implementação do backend do módulo de leads
+
+---
+
+### ✅ ANEXO_14_Internacionalizacao.md
+**Status:** ✅ Completo  
+**Data:** 2025-11-10  
+**O que contém:**
+- Arquitetura de i18n com `nestjs-i18n` + `@dwu/shared`.
+- Estrutura de arquivos (`locales`, `StaticI18nLoader`, helpers).
+- Exemplos de uso em controllers/services e testes.
+- Diretrizes para frontend/mobile e checklist de manutenção.
+**Quando usar:** Ao adicionar idiomas, novas mensagens ou alinhar traduções entre apps.
 
 ---
 
