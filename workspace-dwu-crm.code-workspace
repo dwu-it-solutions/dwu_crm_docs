@@ -1,0 +1,30 @@
+{
+    "folders": [
+      {
+        "path": "dwu_crm_backend"
+      },
+      {
+        "path": "dwu_crm_frontend"
+      },
+      {
+        "path": "dwu_crm_mobile"
+      },
+      {
+        "path": "dwu_crm_shared"
+      },
+      {
+        "path": "dwu_crm_docs"
+      },
+      {
+        "path": "dwu_crm_infra"
+      },
+      {
+        "path": "dwu_crm_database"
+      }	 	  
+    ],
+    "settings": {
+      "git.enabled": true,
+      "git.autofetch": true,
+      "files.autoSave": "afterDelay"
+    }
+  }

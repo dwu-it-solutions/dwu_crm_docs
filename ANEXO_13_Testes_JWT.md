@@ -16,7 +16,7 @@
 2. **Rodar seed apontando para o mesmo banco**
    ```bash
    cd ../dwu_crm_backend
-   DATABASE_URL="postgresql://postgres:postgres@localhost:5432/postgres" npm run prisma:seed
+   DATABASE_URL="postgresql://postgres:postgres@localhost:5432/dwu_suite_dev?schema=dwu_crm_dev" npm run prisma:seed
    ```
    > Executa localmente, mas preenche o mesmo banco usado pelo container (`host.docker.internal`).
 
@@ -48,6 +48,7 @@
 - Para testar expiração, ajuste `JWT_EXPIRES_IN` no `backend.docker.env` e reinicie o container.
 - Healthcheck (`GET /api`) continua público por meio do decorator `@Public()`.
 - Logs do container mostram `API disponível em http://[::1]:3001/api`; o endereço funcional é `http://localhost:3001/api`.
+- O banco padrão de desenvolvimento é `dwu_suite_dev`, com schema ativo `dwu_crm_dev`.
 
 ## 5. Referências
 - README do backend (`dwu_crm_backend/README.md`) – seção “Testes JWT”, com link para este anexo.

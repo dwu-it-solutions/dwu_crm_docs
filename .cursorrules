@@ -1,0 +1,148 @@
+{
+  "rules": [
+    {
+      "id": "project-structure",
+      "description": "Estrutura do projeto DWU-CRM-Dinamize",
+      "when": "always",
+      "prompt": [
+		  "ESTRUTURA DO PROJETO (Multirepo - 6 repositórios GitHub):",
+		  "",
+		  "dwu_crm_backend/ (API Node.js - Servidor A)",
+		  "├── src/",
+		  "│   ├── auth/ (controllers/ DTOs/ guards/ strategies)",
+		  "│   ├── leads/ (Controller → Service → Repository + DTOs + testes)",
+		  "│   ├── users/ (Service → Repository)",
+		  "│   ├── config/ (configuration.ts, validation.ts)",
+		  "│   ├── i18n/ (carregador estático)",
+		  "│   └── prisma/",
+		  "├── prisma/ (schema.prisma, migrations/, seed.ts)",
+		  "├── test/ (app.e2e-spec.ts)",
+		  "├── Dockerfile",
+		  "└── README.md",
+		  "",
+		  "dwu_crm_frontend/ (Web React - Servidor B)",
+		  "├── src/",
+		  "│   ├── components/",
+		  "│   ├── pages/ (Login, Leads, Dashboard)",
+		  "│   ├── services/",
+		  "│   └── hooks/",
+		  "└── package.json",
+		  "",
+		  "dwu_crm_mobile/ (App React Native - Stores)",
+		  "├── src/screens/",
+		  "├── android/",
+		  "└── ios/",
+		  "",
+		  "dwu_crm_shared/ (npm privado @dwu/shared)",
+		  "├── src/",
+		  "│   ├── i18n/ (translations, types)",
+		  "│   ├── constants/",
+		  "│   ├── enums/",
+		  "│   ├── utils/",
+		  "│   └── index.ts",
+		  "└── dist/ (build TypeScript)",
+		  "",
+		  "dwu_crm_database/ (Scripts SQL)",
+		  "├── migrations/",
+		  "└── dwu_crm_mvp_import_pgadmin.sql",
+		  "",
+		  "dwu_crm_docs/ (Documentação)",
+		  "├── ANEXO_*.md (ex.: ANEXO_05_Backend, ANEXO_13_Testes_JWT)",
+		  "├── MANUAL_GIT_FLOW.md",
+		  "├── INDICE_DOCUMENTACAO.md",
+		  "└── demais anexos/estudos",
+		  "",
+		  "BRANCHES (todos repos): main, staging, development",
+		  "VERSIONAMENTO: SemVer independente por repo",
+		  "AMBIENTES: dev (:3001 backend / :5173 frontend), staging (:3002 / :5174), prod (:3000 / :5175)"
+		]
+    },
+	{
+	  "id": "naming-convention-db-code",
+	  "description": "Manter snake_case no banco e camelCase no código",
+	  "when": "always",
+	  "prompt": [
+		"PADRÃO DE NOMENCLATURA:",
+		"- Todas as tabelas e colunas no banco devem usar snake_case (ex.: user_profile, created_at).",
+		"- Todo o código (models, DTOs, services, controllers) deve usar camelCase (ex.: userProfile, createdAt).",
+		"- Utilize mapeamento explícito (@map, @@map no Prisma ou equivalente no ORM) para garantir consistência.",
+		"- Nunca misture padrões: não use camelCase no banco nem snake_case no código.",
+		"- Em migrations e scripts SQL, siga rigorosamente snake_case.",
+		"- Em TypeScript/JavaScript, siga rigorosamente camelCase para propriedades e métodos.",
+		"",
+		"OBSERVAÇÃO:",
+		"- A camada Repository é responsável por fazer a conversão entre os padrões (snake_case → camelCase) ao interagir com o banco e retornar dados para o código."
+	  ]
+	},
+    {
+      "id": "focus-consistency-sequelize",
+      "description": "Foco total no arquivo atual, correção real de erros e consistência com o banco Sequelize",
+      "when": "coding",
+      "language": ["typescript", "javascript", "tsx"],
+      "prompt": [
+        "PRIORIDADE DAS REGRAS DO USUÁRIO:",
+        "- Sempre siga estritamente as regras definidas pelo usuário neste projeto.",
+        "- Não substitua, ignore ou tente melhorar regras ou diretrizes estabelecidas pelo usuário.",
+        "- Se houver conflito entre boas práticas gerais e as regras do usuário, as regras do usuário prevalecem.",
+        "- Não invente otimizações, alterações de padrão ou alterações de arquitetura sem autorização explícita.",
+        "- Todas as decisões de código devem estar alinhadas com as diretrizes definidas pelo usuário neste arquivo.",
+
+        "FOCO E CONTEXTO:",
+        "- Trabalhe apenas no arquivo atual e na tarefa solicitada.",
+        "- Conclua todas as correções no arquivo atual antes de passar para outro.",
+        "- Não modifique código que já funciona corretamente nem otimize além do necessário.",
+
+        "INTEGRIDADE COM O BANCO (SEQUELIZE):",
+        "- Nunca invente ou adicione campos, colunas, propriedades ou relacionamentos que não existam nos models Sequelize.",
+        "- Utilize apenas atributos e associações definidas nos models dentro de src/models.",
+        "- Quando precisar validar algo, consulte os models existentes e não gere SQL direto.",
+        "- Mantenha consistência com os relacionamentos (belongsTo, hasMany, hasOne, belongsToMany).",
+        "- Não crie migrations automáticas nem altere a estrutura do banco sem instrução explícita.",
+        "- Os nomes de campos devem corresponder exatamente aos definidos no model (respeite snake_case, camelCase ou PascalCase conforme existente).",
+
+        "ARQUITETURA E CONSISTÊNCIA:",
+        "- Siga o padrão Controller → Service → Repository → Model.",
+        "- Centralize regras de negócio nos Services.",
+        "- No backend, use apenas entidades e métodos definidos nas camadas existentes.",
+        "- No frontend, valide endpoints existentes antes de criar novos.",
+
+        "CORREÇÃO E EXECUÇÃO:",
+        "- Jamais comente, desative ou remova código funcional para mascarar erros de build.",
+        "- Corrija a causa real do erro (import incorreto, tipo, dependência, escopo, etc) para que o código compile corretamente.",
+        "- Se uma classe, função, propriedade ou import estiver incorreto, corrija-o, mantendo a estrutura e a lógica do sistema.",
+        "- A prioridade é garantir que o build finalize com sucesso (tsc --noEmit) sem esconder erros por comentários.",
+        "- Se algo depender de outro módulo, adicione apenas a correção mínima necessária (ex: import válido, tipo compatível).",
+        "- Nunca substitua correções reais por comentários explicativos; aplique a correção e descreva fora do código se necessário.",
+        "- Após corrigir, o código deve estar executável, coerente e totalmente tipado.",
+
+        "PADRÕES E NOMENCLATURA:",
+        "- Use os mesmos nomes e tipos definidos nos models Sequelize (sem variações).",
+        "- Não crie interfaces, DTOs, enums ou tipos novos sem correspondência nos models.",
+        "- Evite duplicação de lógica, entidades ou validações.",
+
+        "HIGIENE DE CÓDIGO:",
+        "- Remova código morto, duplicado ou obsoleto.",
+        "- Mantenha consistência de imports, nomes e estrutura.",
+        "- Não insira comentários ou logs desnecessários.",
+        "- Prefira código limpo, curto e direto.",
+
+        "FINALIZAÇÃO:",
+        "- Após qualquer modificação, o código deve compilar sem erros (tsc --noEmit).",
+        "- O sistema deve permanecer funcional, sem campos ou propriedades inventadas.",
+        "- Explique brevemente fora do código o que foi corrigido, apenas se necessário."
+      ]
+    }
+  ],
+  "lint": {
+    "autoRun": false,
+    "onSave": false
+  },
+  "behavior": {
+    "followImports": false,
+    "multiFileEdits": false,
+    "sequentialFixes": true,
+    "limitContext": true,
+    "fixAllBeforeNextFile": true
+  }
+}
+
