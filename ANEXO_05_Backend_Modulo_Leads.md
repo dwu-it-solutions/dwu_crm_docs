@@ -317,7 +317,31 @@ O módulo de leads é responsável por:
        │<─────────────────│                    │                  │
 ```
 
-#### 1.3.6 Cenário F: Importação de Leads via CSV
+#### 1.3.6 Arquitetura do Módulo (Atualização 2025-11-10)
+
+Para manter o código alinhado com os princípios SOLID, adotamos o padrão **Controller → Service → Repository**. Cada camada possui responsabilidades claras:
+
+- **LeadsController**: expõe os endpoints REST e delega chamadas ao serviço.
+- **LeadsService**: concentra validações de negócio, paginação e orquestração de operações (ex.: futuras sincronizações).
+- **LeadsRepository** *(novo arquivo `leads.repository.ts`)*: encapsula o Prisma Client, lidando com buscas paginadas, atualizações de status e exclusões.
+
+O mesmo padrão foi aplicado ao módulo de usuários (`UsersRepository`), garantindo consistência na camada de dados.
+
+```
+leads/
+├── dto/
+│   ├── create-lead.dto.ts
+│   ├── list-leads.dto.ts
+│   └── update-lead.dto.ts
+├── leads.controller.ts
+├── leads.module.ts
+├── leads.repository.ts   ← camada de dados (Prisma)
+└── leads.service.ts
+```
+
+> **Benefícios:** isolamento do ORM, facilidade para testes unitários (mock do repositório) e serviços focados em regras de negócio.
+
+#### 1.3.7 Cenário F: Importação de Leads via CSV
 
 ```
 ┌─────────────┐    ┌──────────────┐    ┌─────────────┐    ┌─────────────┐
@@ -375,7 +399,7 @@ O módulo de leads é responsável por:
        │                  │───────────────────>│                  │                  │
 ```
 
-#### 1.3.7 Tratamento de Erros e Retry
+#### 1.3.8 Tratamento de Erros e Retry
 
 ```
 ┌─────────────┐    ┌──────────────┐    ┌─────────────┐    ┌─────────────┐
