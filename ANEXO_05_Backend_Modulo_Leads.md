@@ -324,6 +324,7 @@ Para manter o código alinhado com os princípios SOLID, adotamos o padrão **Co
 - **LeadsController**: expõe os endpoints REST e delega chamadas ao serviço.
 - **LeadsService**: concentra validações de negócio, paginação e orquestração de operações (ex.: futuras sincronizações).
 - **LeadsRepository** *(novo arquivo `leads.repository.ts`)*: encapsula o Prisma Client, lidando com buscas paginadas, atualizações de status e exclusões.
+- **Internacionalização**: mensagens de erro utilizam `nestjs-i18n` e são resolvidas a partir do pacote `@dwu/shared` (`errors.leadNotFound`).
 
 O mesmo padrão foi aplicado ao módulo de usuários (`UsersRepository`), garantindo consistência na camada de dados.
 

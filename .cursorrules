@@ -92,13 +92,13 @@
         "- Conclua todas as correções no arquivo atual antes de passar para outro.",
         "- Não modifique código que já funciona corretamente nem otimize além do necessário.",
 
-        "INTEGRIDADE COM O BANCO (SEQUELIZE):",
-        "- Nunca invente ou adicione campos, colunas, propriedades ou relacionamentos que não existam nos models Sequelize.",
-        "- Utilize apenas atributos e associações definidas nos models dentro de src/models.",
-        "- Quando precisar validar algo, consulte os models existentes e não gere SQL direto.",
-        "- Mantenha consistência com os relacionamentos (belongsTo, hasMany, hasOne, belongsToMany).",
-        "- Não crie migrations automáticas nem altere a estrutura do banco sem instrução explícita.",
-        "- Os nomes de campos devem corresponder exatamente aos definidos no model (respeite snake_case, camelCase ou PascalCase conforme existente).",
+		"INTEGRIDADE COM O BANCO (PRISMA):",
+		"- Nunca invente ou adicione campos, colunas, propriedades ou relacionamentos que não existam no schema.prisma.",
+		"- Utilize apenas atributos e relações definidas no schema dentro de prisma/schema.prisma.",
+		"- Quando precisar validar algo, consulte os modelos Prisma e não gere SQL direto.",
+		"- Mantenha consistência com os relacionamentos (relation fields, @relation, @@map).",
+		"- Não crie migrations automáticas nem altere a estrutura do banco sem instrução explícita.",
+		"- Os nomes de campos devem corresponder exatamente aos definidos no schema (respeite snake_case no banco e camelCase no código, usando @map e @@map quando necessário)."
 
         "ARQUITETURA E CONSISTÊNCIA:",
         "- Siga o padrão Controller → Service → Repository → Model.",
