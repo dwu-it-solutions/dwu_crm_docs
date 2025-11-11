@@ -1,7 +1,7 @@
 # 📚 Índice da Documentação - CRM DWU (Integração Dinamize)
 
 **Última atualização:** 2025-11-11  
-**Versão:** 1.3
+**Versão:** 1.5
 
 ---
 
@@ -156,6 +156,19 @@
 - Diretrizes para frontend/mobile e checklist de manutenção.
 - Placeholders padronizados com `{chave}` (ex.: `Lead {id} não encontrado`).
 **Quando usar:** Ao adicionar idiomas, novas mensagens ou alinhar traduções entre apps.
+
+---
+
+### ✅ ANEXO_16_Login_Duas_Etapas.md
+**Status:** ✅ Completo  
+**Data:** 2025-11-11  
+**O que contém:**
+- Fluxo completo de login em duas etapas com seleção de empresa.
+- Endpoints de autenticação (`/auth/login`, `/auth/select-company`).
+- Tratamento de erros com i18n.
+- Exemplos de uso no frontend.
+- Segurança e validação de tokens temporários.
+**Quando usar:** Implementação de autenticação no frontend/mobile, entendimento do fluxo de login multi-empresa.
 
 ---
 
@@ -533,7 +546,7 @@ Frontend ─JWT─> Backend CRM ─Token Prop─> Dinamize
 
 ## 📊 Status Geral da Documentação
 
-### ✅ Pronto para uso (14 documentos)
+### ✅ Pronto para uso (15 documentos)
 - LEVANTAMENTO_TECNICO_DINAMIZE_API.md
 - ANEXO_01 (Levantamento Técnico API Dinamize)
 - ANEXO_02 (Estrutura de Dados v1.1) - Atualizado 2025-11-05
@@ -546,6 +559,8 @@ Frontend ─JWT─> Backend CRM ─Token Prop─> Dinamize
 - ANEXO_09 (Git Flow + GitHub) ✨ NOVO 2025-11-05
 - ANEXO_10 (Integração IA CRM) ✨ NOVO 2025-11-06
 - ANEXO_11 (Decisão Design System) ✨ NOVO 2025-11-06
+- ANEXO_14 (Internacionalização) ✨ NOVO 2025-11-11
+- ANEXO_15 (Multi-Tenancy por CNPJ) ✨ NOVO 2025-11-11
 - MANUAL_GIT_FLOW.md ✨ NOVO 2025-11-05
 - GUIA_ANALISE_API_INTEGRACOES.md
 - COMPARACAO_DOCUMENTACAO_ATUAL_VS_API_INTEGRACOES.md
@@ -613,6 +628,14 @@ A: Não! Mas PRECISA preencher ANEXO_05 e ANEXO_06 antes de começar a codificar
 
 ## 📝 Histórico de Versões
 
+### v1.5 - 2025-11-11
+- ✅ Adicionado ANEXO_16 (Login em Duas Etapas)
+- ✅ Atualizado índice com novo documento
+
+### v1.4 - 2025-11-11
+- ✅ Adicionado ANEXO_15 (Multi-Tenancy por CNPJ)
+- ✅ Atualizado índice com novo documento
+
 ### v1.3 - 2025-11-06
 - ✅ Renumerados anexos: ANEXO_06→07 (Guia), ANEXO_07→08 (JWT), ANEXO_08→09 (Git Flow), ANEXO_09→10 (IA), ANEXO_10→11 (Design System)
 - ✅ Atualizado índice com numeração correta
@@ -640,6 +663,6 @@ A: Não! Mas PRECISA preencher ANEXO_05 e ANEXO_06 antes de começar a codificar
 ---
 
 **Mantido por:** Equipe DWU CRM  
-**Última revisão:** 2025-11-06  
+**Última revisão:** 2025-11-11  
 **Próxima revisão:** Após análise completa do help.dinamize.com
 
