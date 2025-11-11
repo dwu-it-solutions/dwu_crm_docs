@@ -1,6 +1,6 @@
 # 📚 Índice da Documentação - CRM DWU (Integração Dinamize)
 
-**Última atualização:** 2025-11-06  
+**Última atualização:** 2025-11-11  
 **Versão:** 1.3
 
 ---
@@ -148,12 +148,13 @@
 
 ### ✅ ANEXO_14_Internacionalizacao.md
 **Status:** ✅ Completo  
-**Data:** 2025-11-10  
+**Data:** 2025-11-11  
 **O que contém:**
 - Arquitetura de i18n com `nestjs-i18n` + `@dwu/shared`.
 - Estrutura de arquivos (`locales`, `StaticI18nLoader`, helpers).
 - Exemplos de uso em controllers/services e testes.
 - Diretrizes para frontend/mobile e checklist de manutenção.
+- Placeholders padronizados com `{chave}` (ex.: `Lead {id} não encontrado`).
 **Quando usar:** Ao adicionar idiomas, novas mensagens ou alinhar traduções entre apps.
 
 ---

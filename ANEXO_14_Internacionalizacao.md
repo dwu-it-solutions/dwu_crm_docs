@@ -54,7 +54,7 @@ const message = this.i18n.translate('errors.leadNotFound', {
 ```
 
 - `lang` vem do contexto ou utiliza o default (`pt`).
-- `args` substituem placeholders (`Lead {{id}} não encontrado`).
+- `args` substituem placeholders (`Lead {id} não encontrado`).
 
 ### 3.4 Testes
 
@@ -66,6 +66,22 @@ const message = this.i18n.translate('errors.leadNotFound', {
   }
   ```
 - Testes de integração podem chamar endpoints com `Accept-Language` para validar respostas.
+
+### 3.5 Validação em 2025-11-11
+
+Fluxo exercitado com `docker-compose.override.yml` (hot reload) e banco `dwu_suite_dev` / schema `dwu_crm_dev`:
+
+1. `docker compose run --rm backend npm install`
+2. `docker compose run --rm backend npm run prisma:generate`
+3. `docker compose up -d backend`
+4. `docker compose exec backend npx prisma migrate deploy`
+5. `docker compose exec backend npm run prisma:seed`
+6. `curl -s http://localhost:3001/api/auth/login` → capturar `accessToken`
+7. `curl -s http://localhost:3001/api/leads -H "Authorization: Bearer $TOKEN"` → lista seed
+8. `curl -s http://localhost:3001/api/leads/999 -H "Authorization: Bearer $TOKEN"` → `Lead 999 não encontrado`
+9. `curl -s http://localhost:3001/api/leads/999 -H "Authorization: Bearer $TOKEN" -H "Accept-Language: en"` → `Lead 999 not found`
+
+> Resultado: mensagens interpoladas com `{id}` em pt/en e hot reload ativo sem rebuild do container.
 
 ## 4. Consumindo nas Demais Aplicações
 
@@ -91,7 +107,7 @@ const message = this.i18n.translate('errors.leadNotFound', {
 
 - [ ] Definir `Accept-Language` ou query `?lang=` nas chamadas HTTP quando desejar idioma específico.
 - [ ] Garantir que traduções novas existem em todos os idiomas suportados.
-- [ ] Evitar interpolar com `concat`; use placeholders `{{}}`.
+- [ ] Evitar interpolar com `concat`; use placeholders `{chave}`.
 - [ ] Manter `defaultLanguage` como fallback para casos de ausência de tradução.
 - [ ] Atualizar anexos/README ao adicionar idiomas ou namespaces relevantes.
 
@@ -101,4 +117,6 @@ const message = this.i18n.translate('errors.leadNotFound', {
 - `dwu_crm_backend/src/leads/leads.service.ts`
 - `dwu_crm_shared/src/i18n/index.ts`
 - `ANEXO_13_Testes_JWT.md` – seção de testes com múltiplos idiomas.
+
+
 
