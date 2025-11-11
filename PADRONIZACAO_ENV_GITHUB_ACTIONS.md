@@ -2,14 +2,16 @@
 
 > Documento base para implementação imediata do padrão de variáveis de ambiente, GitHub Actions e fluxo GitLab Flow adaptado no ecossistema DWU CRM.
 
+> **Atualização (2025-11-11)**: o repositório `dwu_crm_infra` foi descontinuado. Os composes de desenvolvimento agora vivem em cada aplicação (backend, frontend, mobile).
+
 ### 1. Objetivos
 - Garantir segurança e rastreabilidade no uso de variáveis (segredos x configuração x contexto).
-- Padronizar a estrutura `.env` em todos os repositórios (`backend`, `frontend`, `mobile`, `shared`, `infra`).
+- Padronizar a estrutura `.env` em todos os repositórios (`backend`, `frontend`, `mobile`, `shared`).
 - Formalizar uso de GitHub Environments (`development`, `staging`, `production`).
 - Ajustar workflows GitHub Actions com uso consistente de `env`, `secrets` e variáveis de contexto.
 - Documentar GitLab Flow adaptado (branches por ambiente) e integração com Semantic Versioning.
 - Criar base compartilhada (`shared`) para i18n e utilitários.
-- Introduzir repositório `crm_infra` com Docker Compose centralizado.
+- Garantir composes de desenvolvimento versionados em cada repositório (backend, frontend, mobile).
 
 ### 2. Escopo Geral
 | Tópico | Itens |
@@ -18,7 +20,7 @@
 | GitHub | Actions (`ci.yml`, `deploy.yml`), Environments, Secrets, Variables |
 | Fluxo Git | Branches `feature/*`, `development`, `staging`, `main`, tags SemVer |
 | Shared | Módulo `i18n` + enums/tipos compartilhados |
-| Infra | Novo repo `dwu_crm_infra` com `docker-compose.yml`, scripts, envs de exemplo |
+| Dev Containers | Composes individuais (`docker-compose.yml` + override) em cada app |
 | Documentação | Atualizações em READMEs, `docs/ENVIRONMENT_VARIABLES.md`, referências cruzadas |
 
 ### 3. Diretrizes de Variáveis
@@ -86,11 +88,8 @@ DINAMIZE_API_KEY=${{ secrets.DINAMIZE_API_KEY }}
    - Documentar consumo em backend (NestJS) e frontend/mobile (React/React Native).
 
 8. **Infraestrutura Docker**
-   - Criar repo `dwu_crm_infra` com:
-     - `docker-compose.yml` (backend, frontend, mobile, network).
-     - `env/backend.env.example`, etc.
-     - Scripts `start`, `stop`, `reset`.
-   - README com instruções `docker compose up`.
+   - Versionar `docker-compose.yml` + `docker-compose.override.yml` diretamente nos repositórios `backend`, `frontend` e `mobile`.
+   - Padronizar documentação de subida/parada em cada README.
 
 9. **Checklist Final**
    - Workflows verdes em todos os repos.

@@ -91,16 +91,9 @@
 | `APP_ENV` | Variable | Ambiente para build | |
 | `NPM_TOKEN` | Secret | Publicação GitHub Packages | Usado no workflow de publish. |
 
-#### 4.5 `dwu_crm_infra` *(novo)*
+#### 4.5 Observação sobre infraestrutura
 
-| Chave | Categoria | Descrição | Observação |
-| --- | --- | --- | --- |
-| `APP_ENV` | Variable | Ambiente compose (`development`, `staging`) | |
-| `BACKEND_IMAGE` | Variable | Tag da imagem backend | |
-| `FRONTEND_IMAGE` | Variable | Tag da imagem frontend | |
-| `MOBILE_IMAGE` | Variable | Tag testes mobile | |
-| `POSTGRES_USER` / `POSTGRES_PASSWORD` | Secret | Banco local/CI | Usar valores dummy em `.env.example`. |
-| `POSTGRES_DB` | Variable | Nome do banco | |
+O repositório `dwu_crm_infra` foi descontinuado em 2025-11-11. As variáveis de suporte a Docker Compose passam a ser mantidas diretamente em cada aplicação (`dwu_crm_backend`, `dwu_crm_frontend`, `dwu_crm_mobile`). Utilize as seções correspondentes acima para definir URLs de banco, segredos e endpoints.
 
 ### 5. Estrutura `.env.example` (modelo)
 
