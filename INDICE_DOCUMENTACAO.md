@@ -1,7 +1,7 @@
 # 📚 Índice da Documentação - CRM DWU (Integração Dinamize)
 
-**Última atualização:** 2025-11-11  
-**Versão:** 1.5
+**Última atualização:** 2025-11-12  
+**Versão:** 1.6
 
 ---
 
@@ -169,6 +169,20 @@
 - Exemplos de uso no frontend.
 - Segurança e validação de tokens temporários.
 **Quando usar:** Implementação de autenticação no frontend/mobile, entendimento do fluxo de login multi-empresa.
+
+---
+
+### ✅ ANEXO_17_Configuracao_Endpoints_Frontend.md
+**Status:** ✅ Completo  
+**Data:** 2025-11-12  
+**O que contém:**
+- Estrutura de arquivos de configuração (`.env`, `.env.example`, `src/config/env.ts`).
+- Configuração centralizada type-safe de endpoints.
+- Exemplos de uso nos componentes.
+- Configuração por ambiente (dev, staging, prod).
+- Guia para adicionar novos endpoints.
+- Troubleshooting comum.
+**Quando usar:** Configuração inicial do frontend, adição de novos endpoints, mudança de ambiente.
 
 ---
 
@@ -628,6 +642,10 @@ A: Não! Mas PRECISA preencher ANEXO_05 e ANEXO_06 antes de começar a codificar
 
 ## 📝 Histórico de Versões
 
+### v1.6 - 2025-11-12
+- ✅ Adicionado ANEXO_17 (Configuração de Endpoints e Variáveis de Ambiente - Frontend)
+- ✅ Atualizado índice com novo documento
+
 ### v1.5 - 2025-11-11
 - ✅ Adicionado ANEXO_16 (Login em Duas Etapas)
 - ✅ Atualizado índice com novo documento
@@ -663,6 +681,6 @@ A: Não! Mas PRECISA preencher ANEXO_05 e ANEXO_06 antes de começar a codificar
 ---
 
 **Mantido por:** Equipe DWU CRM  
-**Última revisão:** 2025-11-11  
+**Última revisão:** 2025-11-12  
 **Próxima revisão:** Após análise completa do help.dinamize.com
 
