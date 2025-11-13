@@ -54,8 +54,14 @@
 | `DB_SCHEMA` | Variable | Schema Prisma (opcional) | |
 | `DATABASE_URL` | Secret | URL completa | Formato padrão Prisma. |
 | `DB_USER` / `DB_PASS` | Secret | Credenciais | Definidos por ambiente. |
-| `DINAMIZE_API_URL` | Variable | Endpoint Dinamize | Sandbox vs produção. |
-| `DINAMIZE_API_KEY` | Secret | Chave API Dinamize | |
+| `DINAMIZE_API_BASE_URL` | Variable | Endpoint Dinamize | Default: `https://api.dinamize.com`. Configure para ambiente de teste se disponível. |
+| `DINAMIZE_API_USER` | Secret | Usuário/email da API Dinamize | Credencial de autenticação. |
+| `DINAMIZE_API_PASSWORD` | Secret | Senha da API Dinamize | Credencial de autenticação. |
+| `DINAMIZE_CLIENT_CODE` | Secret | Código do cliente Dinamize | Código único do cliente. |
+| `DINAMIZE_TOKEN_EXPIRY_INACTIVITY_MINUTES` | Variable | Tempo de expiração por inatividade | Default: `60` minutos. |
+| `DINAMIZE_TOKEN_MAX_AGE_HOURS` | Variable | Tempo máximo de vida do token | Default: `24` horas. |
+| `DINAMIZE_RATE_LIMIT_PER_MINUTE` | Variable | Limite de requisições por minuto | Default: `60`. |
+| `ENCRYPT_TOKEN_KEY` | Secret | Chave para criptografia de tokens | Usado para criptografar tokens armazenados. |
 | `JWT_SECRET` | Secret | Segredo JWT | |
 | `JWT_EXPIRES_IN` | Variable | Expiração token | Ex.: `3600s`. |
 | `REDIS_URL` | Secret | Cache/queue | Opcional. |
@@ -111,9 +117,16 @@ DB_NAME=dwu_suite_dev
 DATABASE_URL=postgresql://user:pass@localhost:5432/dwu_suite_dev?schema=dwu_crm_dev
 # DB_USER e DB_PASS devem ser configurados como Secrets no GitHub
 
-# Dinamize
-DINAMIZE_API_URL=https://sandbox.dinamize.com
-DINAMIZE_API_KEY=preencher_via_secret
+# Dinamize (opcional - necessário quando tiver credenciais)
+# Por padrão, usa ambiente de produção. Configure DINAMIZE_API_BASE_URL para ambiente de teste se disponível.
+DINAMIZE_API_BASE_URL=https://api.dinamize.com
+DINAMIZE_API_USER=preencher_via_secret
+DINAMIZE_API_PASSWORD=preencher_via_secret
+DINAMIZE_CLIENT_CODE=preencher_via_secret
+DINAMIZE_TOKEN_EXPIRY_INACTIVITY_MINUTES=60
+DINAMIZE_TOKEN_MAX_AGE_HOURS=24
+DINAMIZE_RATE_LIMIT_PER_MINUTE=60
+ENCRYPT_TOKEN_KEY=preencher_via_secret
 
 # Autenticação
 JWT_SECRET=alterar_em_producao

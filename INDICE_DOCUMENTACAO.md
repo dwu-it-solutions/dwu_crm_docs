@@ -1,7 +1,7 @@
 # 📚 Índice da Documentação - CRM DWU (Integração Dinamize)
 
 **Última atualização:** 2025-11-12  
-**Versão:** 1.6
+**Versão:** 1.7
 
 ---
 
@@ -183,6 +183,36 @@
 - Guia para adicionar novos endpoints.
 - Troubleshooting comum.
 **Quando usar:** Configuração inicial do frontend, adição de novos endpoints, mudança de ambiente.
+
+---
+
+### ✅ ANEXO_18_Implementacao_Dinamize_Redis.md
+**Status:** ✅ Completo  
+**Data:** 2025-11-12  
+**O que contém:**
+- Arquitetura completa da integração Dinamize com Redis.
+- Componentes principais (autenticação, rate limiting, cache, filas).
+- Configurações e variáveis de ambiente.
+- Estrutura de módulos NestJS.
+- Fluxos de sincronização assíncrona.
+- Tratamento de erros e retries.
+- Docker e CI/CD.
+**Quando usar:** Implementação da integração Dinamize, entendimento da arquitetura, troubleshooting.
+
+---
+
+### ✅ ANEXO_19_Estrategia_Logging_Rastreamento.md
+**Status:** ✅ Completo  
+**Data:** 2025-11-12  
+**O que contém:**
+- Estratégia de logging com NestJS Logger.
+- Níveis de log (log, debug, warn, error) e quando usar.
+- Pontos estratégicos de logging (Controller, Service, Processor).
+- Fluxo de rastreamento end-to-end.
+- Boas práticas e segurança (redação de dados sensíveis).
+- Exemplos completos de implementação.
+- Checklist de implementação.
+**Quando usar:** Adicionar novos logs, entender rastreamento de requisições, debugging, monitoramento.
 
 ---
 
@@ -560,7 +590,7 @@ Frontend ─JWT─> Backend CRM ─Token Prop─> Dinamize
 
 ## 📊 Status Geral da Documentação
 
-### ✅ Pronto para uso (15 documentos)
+### ✅ Pronto para uso (17 documentos)
 - LEVANTAMENTO_TECNICO_DINAMIZE_API.md
 - ANEXO_01 (Levantamento Técnico API Dinamize)
 - ANEXO_02 (Estrutura de Dados v1.1) - Atualizado 2025-11-05
@@ -575,6 +605,9 @@ Frontend ─JWT─> Backend CRM ─Token Prop─> Dinamize
 - ANEXO_11 (Decisão Design System) ✨ NOVO 2025-11-06
 - ANEXO_14 (Internacionalização) ✨ NOVO 2025-11-11
 - ANEXO_15 (Multi-Tenancy por CNPJ) ✨ NOVO 2025-11-11
+- ANEXO_17 (Configuração Endpoints Frontend) ✨ NOVO 2025-11-12
+- ANEXO_18 (Implementação Dinamize Redis) ✨ NOVO 2025-11-12
+- ANEXO_19 (Estratégia Logging) ✨ NOVO 2025-11-12
 - MANUAL_GIT_FLOW.md ✨ NOVO 2025-11-05
 - GUIA_ANALISE_API_INTEGRACOES.md
 - COMPARACAO_DOCUMENTACAO_ATUAL_VS_API_INTEGRACOES.md
@@ -641,6 +674,12 @@ A: Não! Mas PRECISA preencher ANEXO_05 e ANEXO_06 antes de começar a codificar
 ---
 
 ## 📝 Histórico de Versões
+
+### v1.7 - 2025-11-12
+- ✅ Adicionado ANEXO_18 (Implementação Dinamize com Redis)
+- ✅ Adicionado ANEXO_19 (Estratégia de Logging e Rastreamento)
+- ✅ Aplicados logs estratégicos no DinamizeSyncController
+- ✅ Atualizado índice com novos documentos
 
 ### v1.6 - 2025-11-12
 - ✅ Adicionado ANEXO_17 (Configuração de Endpoints e Variáveis de Ambiente - Frontend)
