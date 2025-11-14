@@ -195,6 +195,11 @@ jobs:
 
 ### dwu_crm_shared (npm privado)
 
+**Estrutura Simplificada:**
+- Apenas `main` + `feature/*` (sem development/staging)
+- Biblioteca não precisa de múltiplos ambientes
+- Versionamento resolve diferentes "estágios" (v1.0.0, v1.0.0-beta, etc.)
+
 **Conteúdo:**
 - Types (Lead, Company, Opportunity)
 - Enums (LeadStatus, SyncStatus)
@@ -204,20 +209,22 @@ jobs:
 **Publicar:**
 ```bash
 cd dwu_crm_shared
-npm version minor  # v1.0.0 → v1.1.0
-npm publish        # GitHub Packages
+# Push para main → publica automaticamente (patch increment)
+# Ou criar tag:
+git tag v1.1.0
+git push origin v1.1.0  # Publica v1.1.0
 ```
 
 **Usar:**
 ```bash
 # dwu_crm_backend
-npm install @dwu/crm-shared@1.1.0
+npm install @dwu/shared@1.1.0
 
 # dwu_crm_frontend  
-npm install @dwu/crm-shared@1.1.0
+npm install @dwu/shared@1.1.0
 ```
 
-**Atualização:** Shared muda → publica → backend/frontend atualizam package.json
+**Atualização:** Shared muda → merge para main → publica automaticamente → backend/frontend atualizam package.json
 
 ---
 
