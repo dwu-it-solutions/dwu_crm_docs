@@ -1,7 +1,7 @@
 # 📚 Índice da Documentação - CRM DWU (Integração Dinamize)
 
-**Última atualização:** 2025-11-12  
-**Versão:** 1.7
+**Última atualização:** 2025-11-14  
+**Versão:** 1.9
 
 ---
 
@@ -213,6 +213,35 @@
 - Exemplos completos de implementação.
 - Checklist de implementação.
 **Quando usar:** Adicionar novos logs, entender rastreamento de requisições, debugging, monitoramento.
+
+---
+
+### ✅ ANEXO_20_Testes_Docker.md
+**Status:** ✅ Completo  
+**Data:** 2025-11-12  
+**O que contém:**
+- Guia completo de execução de testes via Docker.
+- Estrutura de containers (PostgreSQL local, Redis em container, Backend em container).
+- Comandos obrigatórios para testes (docker-compose exec).
+- Workflow recomendado para desenvolvimento e testes.
+- Variáveis de ambiente para testes.
+- Troubleshooting comum.
+- Integração com CI/CD.
+**Quando usar:** Executar testes no ambiente Docker, entender estrutura de testes, troubleshooting de ambiente.
+
+---
+
+### ✅ ANEXO_21_GitHub_Packages.md
+**Status:** ✅ Completo  
+**Data:** 2025-11-14  
+**O que contém:**
+- Configuração completa do GitHub Packages para @dwu/shared.
+- Publicação automática via workflow.
+- Configuração local (autenticação, .npmrc).
+- Uso com Docker (desenvolvimento local vs CI).
+- Estrutura de versões (semantic versioning).
+- Troubleshooting comum.
+**Quando usar:** Configurar GitHub Packages, publicar @dwu/shared, entender integração CI/CD.
 
 ---
 
@@ -590,7 +619,7 @@ Frontend ─JWT─> Backend CRM ─Token Prop─> Dinamize
 
 ## 📊 Status Geral da Documentação
 
-### ✅ Pronto para uso (17 documentos)
+### ✅ Pronto para uso (18 documentos)
 - LEVANTAMENTO_TECNICO_DINAMIZE_API.md
 - ANEXO_01 (Levantamento Técnico API Dinamize)
 - ANEXO_02 (Estrutura de Dados v1.1) - Atualizado 2025-11-05
@@ -608,6 +637,8 @@ Frontend ─JWT─> Backend CRM ─Token Prop─> Dinamize
 - ANEXO_17 (Configuração Endpoints Frontend) ✨ NOVO 2025-11-12
 - ANEXO_18 (Implementação Dinamize Redis) ✨ NOVO 2025-11-12
 - ANEXO_19 (Estratégia Logging) ✨ NOVO 2025-11-12
+- ANEXO_20 (Testes Docker) ✨ NOVO 2025-11-12
+- ANEXO_21 (GitHub Packages) ✨ NOVO 2025-11-14
 - MANUAL_GIT_FLOW.md ✨ NOVO 2025-11-05
 - GUIA_ANALISE_API_INTEGRACOES.md
 - COMPARACAO_DOCUMENTACAO_ATUAL_VS_API_INTEGRACOES.md
@@ -674,6 +705,17 @@ A: Não! Mas PRECISA preencher ANEXO_05 e ANEXO_06 antes de começar a codificar
 ---
 
 ## 📝 Histórico de Versões
+
+### v1.9 - 2025-11-14
+- ✅ Adicionado ANEXO_21 (GitHub Packages)
+- ✅ Configurado publicação automática de @dwu/shared no GitHub Packages
+- ✅ Atualizado índice com novo documento
+
+### v1.8 - 2025-11-12
+- ✅ Adicionado ANEXO_20 (Testes Docker)
+- ✅ Movido README_TESTES_DOCKER.md da raiz do backend para dwu_crm_docs
+- ✅ Atualizado README.md do backend com referência ao anexo
+- ✅ Atualizado índice com novo documento
 
 ### v1.7 - 2025-11-12
 - ✅ Adicionado ANEXO_18 (Implementação Dinamize com Redis)
